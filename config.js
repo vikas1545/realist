@@ -1,0 +1,1 @@
+export const DATABASE ="mongodb+srv://vikaskumarvk0612:vikas0959@realist-cluster.5uzdstq.mongodb.net/?retryWrites=true&w=majority"
