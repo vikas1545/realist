@@ -6,6 +6,20 @@ import User from "../models/user.js";
 import {nanoid} from "nanoid";
 import validator from "email-validator";
 
+const tokenAndUserResponse = (req, res, user) => {
+    const token = jwt.sign({_id: user._id}, config.JWT_SECRET, {
+        expiresIn: "1h"
+    })
+
+    const refreshToken = jwt.sign({_id: user._id}, config.JWT_SECRET, {
+        expiresIn: "7d"
+    })
+
+    user.password = undefined;
+    user.resetCode = undefined;
+
+    return res.json({token, refreshToken, user})
+}
 export const welcome = (req, res) => {
     res.json({
         data: "Hello Vikas",
@@ -77,18 +91,7 @@ export const register = async (req, res) => {
             password: hashedPassword
         }).save();
 
-        const token = jwt.sign({_id: user._id}, config.JWT_SECRET, {
-            expiresIn: "1h"
-        })
-
-        const refreshToken = jwt.sign({_id: user._id}, config.JWT_SECRET, {
-            expiresIn: "7d"
-        })
-
-        user.password = undefined;
-        user.resetCode = undefined;
-
-        return res.json({token, refreshToken, user})
+        tokenAndUserResponse(req, res, user);
     } catch (err) {
         console.log('err :', err);
         return res.json({error: "Something went wrong.."})
@@ -107,17 +110,7 @@ export const login = async (req, res) => {
             return res.json({error: "Wrong Password"})
         }
 
-        const token = jwt.sign({_id: user._id}, config.JWT_SECRET, {
-            expiresIn: "1h"
-        })
-
-        const refreshToken = jwt.sign({_id: user._id}, config.JWT_SECRET, {
-            expiresIn: "7d"
-        })
-
-        user.password = undefined;
-        user.resetCode = undefined;
-        return res.json({token, refreshToken, user})
+        tokenAndUserResponse(req, res, user)
     } catch (err) {
         console.log('err :', err)
         return res.json({error: "Something went wrong.."})
@@ -150,30 +143,42 @@ export const forgotPassword = async (req, res) => {
                 })
         }
     } catch (err) {
-        res.json({error:"Something went wrong"})
+        res.json({error: "Something went wrong"})
     }
 }
 
-export const accessAccount = async (req,res)=> {
+export const accessAccount = async (req, res) => {
     try {
-        const {resetCode} = jwt.verify(req.body.resetCode,config.JWT_SECRET);
-        console.log('resetCode :',resetCode)
-        if(resetCode) {
-            const user= await User.findOneAndUpdate({resetCode: resetCode},{resetCode: ""})
-            const token = jwt.sign({_id: user._id}, config.JWT_SECRET, {
-                expiresIn: "1h"
-            })
-
-            const refreshToken = jwt.sign({_id: user._id}, config.JWT_SECRET, {
-                expiresIn: "7d"
-            })
-
-            user.password = undefined;
-            user.resetCode = undefined;
-
-            return res.json({token, refreshToken, user})
+        const {resetCode} = jwt.verify(req.body.resetCode, config.JWT_SECRET);
+        console.log('resetCode :', resetCode)
+        if (resetCode) {
+            const user = await User.findOneAndUpdate({resetCode: resetCode}, {resetCode: ""})
+            tokenAndUserResponse(req, res, user)
         }
-    }catch (err) {
-        res.json({error:"Something went wrong"})
+    } catch (err) {
+        res.json({error: "Something went wrong"})
+    }
+}
+
+export const refreshToken = async (req, res) => {
+    try {
+        const {_id} = jwt.verify(req.headers.refresh_token, config.JWT_SECRET);
+        const user = await User.findById(_id);
+        tokenAndUserResponse(req, res, user)
+    } catch (err) {
+        console.log(err);
+        return res.status(403).json({error: "Refresh token failed"})
+    }
+}
+
+export const currentUser = async (req, res) => {
+    try {
+        const user = await User.findById(req.user._id);
+        user.password = undefined;
+        user.resetCode = undefined;
+        return res.json({user:user})
+    } catch (err) {
+        console.log(err);
+        return res.status(403).json({error: "Unauthorized"})
     }
 }
