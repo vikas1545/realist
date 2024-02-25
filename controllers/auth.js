@@ -5,6 +5,7 @@ import {hashPassword, comparePassword} from "../helpers/auth.js";
 import User from "../models/user.js";
 import {nanoid} from "nanoid";
 import validator from "email-validator";
+import {json} from "express";
 
 const tokenAndUserResponse = (req, res, user) => {
     const token = jwt.sign({_id: user._id}, config.JWT_SECRET, {
@@ -176,9 +177,58 @@ export const currentUser = async (req, res) => {
         const user = await User.findById(req.user._id);
         user.password = undefined;
         user.resetCode = undefined;
-        return res.json({user:user})
+        return res.json({user: user})
     } catch (err) {
         console.log(err);
         return res.status(403).json({error: "Unauthorized"})
+    }
+}
+
+export const publicProfile = async (req, res) => {
+    try {
+        const user = await User.findOne({username: req.params.username})
+        user.password = undefined;
+        user.resetCode = undefined;
+        return res.json(user)
+    } catch (err) {
+        console.log(err);
+        return res.json({error: "User not found"})
+    }
+}
+
+export const updatePassword = async (req, res) => {
+    try {
+        const {password} = req.body;
+        if (!password) {
+            return res.json({error: "Password is required!"})
+        }
+        if (password && password.length < 6) {
+            return res.json({error: "Password must be of at least 6 character!"})
+        }
+        const user = await User.findByIdAndUpdate(req.user._id, {
+            password: await hashPassword(password)
+        });
+        res.json({ok: true})
+    } catch (err) {
+        console.log('err :',err);
+        res.status(403).json({error:"Unauthorized"})
+    }
+}
+
+export const updateProfile = async (req,res) =>{
+    try {
+        const user=await User.findByIdAndUpdate(req.user._id,req.body,{
+            new:true // here new: true is for mongodb then return updated data instead of default older
+        })
+        user.password=undefined;
+        user.resetCode=undefined;
+        res.json(user)
+    }catch (err) {
+        console.log('err :',err);
+        if(err.codeName==='DuplicateKey') {
+            return res.json({error:"Username or email is already taken"})
+        }else {
+            res.status(403).json({error:"Unauthorized"})
+        }
     }
 }
