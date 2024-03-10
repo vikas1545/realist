@@ -4,15 +4,18 @@ import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import {AuthProvider} from "./context/Auth";
-import {createContext, useState} from "react";
+//import {createContext, useState} from "react";
 import Main from "./components/nav/Main";
 //import 'bootstrap/dist/css/bootstrap.min.css';
-export const AuthContext1 = createContext();
+import {Toaster} from "react-hot-toast";
+
+//export const AuthContext1 = createContext();
 function App() {
 
     return (
         <BrowserRouter>
             <Main/>
+            <Toaster/>
             <AuthProvider>
                 <Routes>
                     <Route path="/" element={<Home/>}/>

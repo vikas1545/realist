@@ -1,7 +1,8 @@
 import React, {useState} from "react";
 import axios from "axios";
-//import {API} from "../configclient";
-export const API = "http://localhost:8000/api";
+import toast from "react-hot-toast";
+
+const API = process.env.REACT_APP_API_URL;
 const Register = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -9,10 +10,14 @@ const Register = () => {
     const handleSubmit = async (e) => {
         e.preventDefault()
         try {
-            const res= await axios.post(`${API}/pre-register`,{email,password});
-            console.log(res)
+            const { data } = await axios.post(`${API}/pre-register`, { email, password });
+            console.log('data is :',data)
+                if(data?.error) {
+                    toast.error(data.error)
+                }
         } catch (err) {
-            console.log(err)
+            console.log(err);
+            toast.error("Something went wrong!")
         }
     }
 
