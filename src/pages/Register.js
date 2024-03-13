@@ -1,23 +1,32 @@
 import React, {useState} from "react";
 import axios from "axios";
 import toast from "react-hot-toast";
+import {useNavigate} from "react-router-dom";
 
-const API = process.env.REACT_APP_API_URL;
 const Register = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-
+    const [loading, setLoading] = useState(false);
+    const navigate = useNavigate();
     const handleSubmit = async (e) => {
-        e.preventDefault()
+        e.preventDefault();
+        setLoading(true);
         try {
-            const { data } = await axios.post(`${API}/pre-register`, { email, password });
+            const { data } = await axios.post(`/pre-register`, { email, password });
             console.log('data is :',data)
                 if(data?.error) {
-                    toast.error(data.error)
+                    toast.error(data.error);
+                    setLoading(false);
+                }
+                else{
+                    toast.success("Please check your email for account activation..");
+                    setLoading(false);
+                    navigate('/');
                 }
         } catch (err) {
             console.log(err);
-            toast.error("Something went wrong!")
+            toast.error("Something went wrong!");
+            setLoading(false);
         }
     }
 
@@ -32,7 +41,7 @@ const Register = () => {
                                    autoFocus onChange={(e) => setEmail(e.target.value)} value={email}/>
                             <input type="password" placeholder="Enter your Password" className="form-control mb-4"
                                    onChange={(e) => setPassword(e.target.value)} value={password} required/>
-                            <button className="btn btn-primary col-12 mb-4">Register</button>
+                            <button disabled={loading} className="btn btn-primary col-12 mb-4">{loading ? "Waiting": "Register"}</button>
                         </form>
                     </div>
                 </div>
