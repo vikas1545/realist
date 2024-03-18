@@ -10,9 +10,23 @@ const Main = () => {
         localStorage.removeItem("auth");
         navigate('/login')
     }
+
+    const loggedIn= auth.user!==null && auth.token!=="" && auth.refreshToken!=="";
+
+    const handlePostAdClick=()=> {
+        if(loggedIn) {
+            navigate('/ad/create')
+        }else{
+            navigate('/login')
+        }
+    }
+
+
     return (
         <nav className="nav d-flex justify-content-between lead">
             <NavLink className="nav-link nav-font" aria-current="page" to="/">Home</NavLink>
+
+
             <NavLink className="nav-link nav-font" to="/login">Login</NavLink>
             <NavLink className="nav-link nav-font" to="/register">Register</NavLink>
 

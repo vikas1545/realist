@@ -5,3 +5,7 @@
 .nav-font {
   font-size: larger;
 }
+
+.pointer {
+  cursor: pointer;
+}

@@ -16,14 +16,15 @@ const PrivateRoute = ()=> {
 
     const getCurrentUser = async ()=> {
         try{
-            const {data} = axios.get("/current-user",{
+            const {data} =await axios.get("/current-user",{
                 headers:{
                     Authorization:auth?.token
                 }
             })
             setOk(true)
         }catch (err) {
-            setOk(true)
+            console.log('error ############ :',err)
+            setOk(false)
         }
     }
     return ok?<Outlet/>:""

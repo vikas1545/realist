@@ -4,23 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="397a5728-4616-4145-a6e2-15d9c302984c" name="Changes" comment="connected with backend">
-      <change afterPath="$PROJECT_DIR$/src/components/nav/Sidebar.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/routes/PrivateRoute.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/auth/AccessAccount.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/auth/AccountActivate.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/auth/ForgotPassword.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/user/Ad/AdCreate.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/user/Dashboard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+    <list default="true" id="397a5728-4616-4145-a6e2-15d9c302984c" name="Changes" comment="till protected route">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/nav/Main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/nav/Main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/routes/PrivateRoute.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/routes/PrivateRoute.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/context/Auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/context/Auth.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Home.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Register.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Register.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,7 +70,11 @@
       <workItem from="1710154718795" duration="3608000" />
       <workItem from="1710161960479" duration="7051000" />
       <workItem from="1710246095879" duration="2448000" />
-      <workItem from="1710307285295" duration="9157000" />
+      <workItem from="1710307285295" duration="9243000" />
+      <workItem from="1710396756721" duration="7515000" />
+      <workItem from="1710479797853" duration="1014000" />
+      <workItem from="1710730696872" duration="1835000" />
+      <workItem from="1710755245005" duration="829000" />
     </task>
     <task id="LOCAL-00001" summary="connected with backend">
       <option name="closed" value="true" />
@@ -99,7 +92,15 @@
       <option name="project" value="LOCAL" />
       <updated>1710089749643</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="till protected route">
+      <option name="closed" value="true" />
+      <created>1710337787053</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1710337787053</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -116,6 +117,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="connected with backend" />
-    <option name="LAST_COMMIT_MESSAGE" value="connected with backend" />
+    <MESSAGE value="till protected route" />
+    <option name="LAST_COMMIT_MESSAGE" value="till protected route" />
   </component>
 </project>
