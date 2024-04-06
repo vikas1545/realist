@@ -25,7 +25,7 @@ const Main = () => {
     return (
         <nav className="nav d-flex justify-content-between lead">
             <NavLink className="nav-link nav-font" aria-current="page" to="/">Home</NavLink>
-
+            <a className="nav-link nav-font pointer" onClick={handlePostAdClick}>Post Ad</a>
             {
                 !loggedIn ? <>
                     <NavLink className="nav-link nav-font" to="/login">Login</NavLink>
