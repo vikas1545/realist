@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="AutoImportSettings">
-    <option name="autoReloadType" value="SELECTIVE" />
-  </component>
   <component name="ChangeListManager">
-    <list default="true" id="397a5728-4616-4145-a6e2-15d9c302984c" name="Changes" comment="till protected route">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/nav/Main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/nav/Main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/routes/PrivateRoute.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/routes/PrivateRoute.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/context/Auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/context/Auth.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
+    <list default="true" id="603469f6-d946-45f3-ac70-e0053cd9f898" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/client.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/forms/AdForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/forms/AdForm.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,107 +16,43 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_BRANCH_BY_REPOSITORY">
-      <map>
-        <entry key="$PROJECT_DIR$" value="master" />
-      </map>
-    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectColorInfo">{
-  &quot;customColor&quot;: &quot;&quot;,
-  &quot;associatedIndex&quot;: 4
-}</component>
-  <component name="ProjectId" id="2d5bsfu2j6KKqxLCoJuyNYIZyWz" />
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 6
+}]]></component>
+  <component name="ProjectId" id="2fZfwBPr8XyypY6U1KsPYWqcrPl" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;client&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.ide.settings.web.browsers&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "client",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
-  <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Dell\WebstormProjects\REALIST\client\src\pages\user\Ad" />
-    </key>
-  </component>
+}]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="397a5728-4616-4145-a6e2-15d9c302984c" name="Changes" comment="" />
-      <created>1709301094453</created>
+      <changelist id="603469f6-d946-45f3-ac70-e0053cd9f898" name="Changes" comment="" />
+      <created>1714013756898</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1709301094453</updated>
-      <workItem from="1709301096166" duration="362000" />
-      <workItem from="1709608358187" duration="385000" />
-      <workItem from="1710081784799" duration="10147000" />
-      <workItem from="1710154718795" duration="3608000" />
-      <workItem from="1710161960479" duration="7051000" />
-      <workItem from="1710246095879" duration="2448000" />
-      <workItem from="1710307285295" duration="9243000" />
-      <workItem from="1710396756721" duration="7515000" />
-      <workItem from="1710479797853" duration="1014000" />
-      <workItem from="1710730696872" duration="1835000" />
-      <workItem from="1710755245005" duration="829000" />
+      <updated>1714013756898</updated>
+      <workItem from="1714013758008" duration="315000" />
     </task>
-    <task id="LOCAL-00001" summary="connected with backend">
-      <option name="closed" value="true" />
-      <created>1709301301970</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1709301301970</updated>
-    </task>
-    <task id="LOCAL-00002" summary="connected with backend">
-      <option name="closed" value="true" />
-      <created>1710089749643</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1710089749643</updated>
-    </task>
-    <task id="LOCAL-00003" summary="till protected route">
-      <option name="closed" value="true" />
-      <created>1710337787053</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1710337787053</updated>
-    </task>
-    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-    <option name="exactExcludedFiles">
-      <list>
-        <option value="$PROJECT_DIR$/node_modules/tailwindcss/stubs/tailwind.config.js" />
-        <option value="$PROJECT_DIR$/node_modules/tailwindcss/stubs/tailwind.config.cjs" />
-      </list>
-    </option>
-  </component>
-  <component name="UnknownFeatures">
-    <option featureType="com.intellij.fileTypeFactory" implementationName=".env" />
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="connected with backend" />
-    <MESSAGE value="till protected route" />
-    <option name="LAST_COMMIT_MESSAGE" value="till protected route" />
   </component>
 </project>
