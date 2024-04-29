@@ -1,11 +1,10 @@
 import {useState} from "react";
-import axios from "axios";
 import {debounce} from 'lodash';
 import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
 import CurrencyInput from "react-currency-input-field";
+import ImageUpload from "./ImageUpload";
 
-const accessToken = "pk.4f296a23888f1a1ab6eab41fe94fcbaf";
 const AdForm = ({action, type}) => {
     const [ad, setAd] = useState({
         photos: [],
@@ -69,7 +68,9 @@ const AdForm = ({action, type}) => {
 
     return (
         <div>
-            <p>This ad create form</p>
+            <div className="mb-2 form-control">
+                <ImageUpload ad={ad} setAd={setAd}/>
+            </div>
             <div className="mb-3 form-control">
                 <Autocomplete
                     value={selectedLocation}
