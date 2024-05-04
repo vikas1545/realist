@@ -1,4 +1,3 @@
-import * as config from "../config.js";
 import {nanoid} from "nanoid";
 import {AWSS3} from "../config.js";
 
