@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="603469f6-d946-45f3-ac70-e0053cd9f898" name="Changes" comment="renamed">
+    <list default="true" id="603469f6-d946-45f3-ac70-e0053cd9f898" name="Changes" comment="uploaded images displaying">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/forms/ImageUpload.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/forms/ImageUpload.js" afterDir="false" />
     </list>
@@ -56,7 +56,8 @@
       <workItem from="1714358835814" duration="1702000" />
       <workItem from="1714370265477" duration="2910000" />
       <workItem from="1714557210242" duration="486000" />
-      <workItem from="1714616471130" duration="3156000" />
+      <workItem from="1714616471130" duration="3367000" />
+      <workItem from="1714803203250" duration="5166000" />
     </task>
     <task id="LOCAL-00001" summary="renamed">
       <option name="closed" value="true" />
@@ -74,7 +75,15 @@
       <option name="project" value="LOCAL" />
       <updated>1714373541495</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="uploaded images displaying">
+      <option name="closed" value="true" />
+      <created>1714619704670</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1714619704670</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -82,6 +91,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="renamed" />
-    <option name="LAST_COMMIT_MESSAGE" value="renamed" />
+    <MESSAGE value="uploaded images displaying" />
+    <option name="LAST_COMMIT_MESSAGE" value="uploaded images displaying" />
   </component>
 </project>
