@@ -4,6 +4,9 @@ import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
 import CurrencyInput from "react-currency-input-field";
 import ImageUpload from "./ImageUpload";
+import axios from "axios";
+import toast from "react-hot-toast";
+import {useNavigate} from "react-router-dom";
 
 const AdForm = ({action, type}) => {
     const [ad, setAd] = useState({
@@ -12,20 +15,22 @@ const AdForm = ({action, type}) => {
         price: "",
         address: "",
         bathrooms: "",
-        bedrooms:"",
+        bedrooms: "",
         carpark: "",
         landsize: "",
-        type: "",
         title: "",
         description: "",
-        loading: false
+        loading: false,
+        action,
+        type,
+        coordinates:{}
     })
 
     const [selectedLocation, setSelectedLocation] = useState(null);
     const [loading, setLoading] = useState(false);
     const [options, setOptions] = useState([]);
 
-
+    const navigate = useNavigate();
     const debouncedHandleChange = debounce(async (inputValue) => {
         if (inputValue.length > 3) {
             setLoading(true);
@@ -62,8 +67,26 @@ const AdForm = ({action, type}) => {
         //setQuery(value);
         setSelectedLocation(value);
         console.log('ad :', ad)
-        setAd({...ad, address: value?.display_name || ''})
+        setAd({...ad, address: value?.display_name || '', coordinates: {lat: value?.lat || '', lon: value?.lon || ''}})
     };
+
+    const handleClick = async () => {
+        try {
+            setAd({...ad, loading: true})
+            const {data} = await axios.post('/create', ad);
+            console.log('ad create response', data)
+            if (data?.error) {
+                toast.error(data.error);
+                setAd({...ad, loading: false})
+            } else {
+                toast.success('Ad created successfully');
+                setAd({...ad, loading: false})
+                //navigate("/dashboard")
+            }
+        } catch (err) {
+            console.log('error :', err)
+        }
+    }
 
 
     return (
@@ -158,7 +181,7 @@ const AdForm = ({action, type}) => {
                 }}
             />
 
-            <button className="btn btn-primary">Submit</button>
+            <button className="btn btn-primary" onClick={handleClick}>Submit</button>
             <pre>
                 {JSON.stringify(ad, null, 4)}
             </pre>

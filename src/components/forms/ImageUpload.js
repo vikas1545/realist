@@ -110,8 +110,9 @@ const ImageUpload = ({ad, setAd}) => {
             </label>
 
             <Stack direction="row" spacing={2}>
-                {ad.photos?.map((file) => (
+                {ad.photos?.map((file,index) => (
                         <Avatar
+                            key={index}
                             alt="Remy Sharp"
                             src={file?.Location}
                             sx={{width: 54, height: 50}}
