@@ -5,5 +5,6 @@ const router = express.Router();
 
 router.post('/upload-image',requireSignIn,ad.uploadImage);
 router.delete('/remove-image',requireSignIn,ad.removeImage);
+router.post('/create',requireSignIn,ad.create);
 
 export default router;
