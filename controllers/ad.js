@@ -97,7 +97,6 @@ export const create = async (req, res) => {
                 new: true
             }
         )
-
         user.password=undefined;
         user.resetCode =undefined
         res.json({ad,user})
