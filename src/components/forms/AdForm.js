@@ -23,7 +23,7 @@ const AdForm = ({action, type}) => {
         loading: false,
         action,
         type,
-        coordinates:{}
+        coordinates: {}
     })
 
     const [selectedLocation, setSelectedLocation] = useState(null);
@@ -81,7 +81,7 @@ const AdForm = ({action, type}) => {
             } else {
                 toast.success('Ad created successfully');
                 setAd({...ad, loading: false})
-                //navigate("/dashboard")
+                navigate("/dashboard")
             }
         } catch (err) {
             console.log('error :', err)
@@ -121,36 +121,42 @@ const AdForm = ({action, type}) => {
                     setAd({...ad, price: value})
                 }}
             />
-            <input
-                type="number"
-                min="0"
-                className="form-control mb-3"
-                placeholder="Enter how many bedrooms"
-                value={ad.bedrooms}
-                onChange={(e) => {
-                    setAd({...ad, bedrooms: e.target.value})
-                }}
-            />
-            <input
-                type="number"
-                min="0"
-                className="form-control mb-3"
-                placeholder="Enter how many bathrooms"
-                value={ad.bathrooms}
-                onChange={(e) => {
-                    setAd({...ad, bathrooms: e.target.value})
-                }}
-            />
-            <input
-                type="number"
-                min="0"
-                className="form-control mb-3"
-                placeholder="Enter how many carparks"
-                value={ad.carpark}
-                onChange={(e) => {
-                    setAd({...ad, carpark: e.target.value})
-                }}
-            />
+
+            {
+                type==='House' ? <>
+                    <input
+                        type="number"
+                        min="0"
+                        className="form-control mb-3"
+                        placeholder="Enter how many bedrooms"
+                        value={ad.bedrooms}
+                        onChange={(e) => {
+                            setAd({...ad, bedrooms: e.target.value})
+                        }}
+                    />
+                    <input
+                        type="number"
+                        min="0"
+                        className="form-control mb-3"
+                        placeholder="Enter how many bathrooms"
+                        value={ad.bathrooms}
+                        onChange={(e) => {
+                            setAd({...ad, bathrooms: e.target.value})
+                        }}
+                    />
+                    <input
+                        type="number"
+                        min="0"
+                        className="form-control mb-3"
+                        placeholder="Enter how many carparks"
+                        value={ad.carpark}
+                        onChange={(e) => {
+                            setAd({...ad, carpark: e.target.value})
+                        }}
+                    />
+                </>:''
+            }
+
 
             <input
                 type="text"
@@ -181,10 +187,11 @@ const AdForm = ({action, type}) => {
                 }}
             />
 
-            <button className="btn btn-primary" onClick={handleClick}>Submit</button>
-            <pre>
-                {JSON.stringify(ad, null, 4)}
-            </pre>
+            <button className="btn btn-primary mb-5" onClick={handleClick}
+                    disabled={ad.loading}>{ad.loading ? "Saving..." : "Submit"}</button>
+            {/*<pre>*/}
+            {/*    {JSON.stringify(ad, null, 4)}*/}
+            {/*</pre>*/}
         </div>
     )
 }

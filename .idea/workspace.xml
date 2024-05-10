@@ -5,9 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="603469f6-d946-45f3-ac70-e0053cd9f898" name="Changes" comment="uploaded image is getting deleted">
+      <change afterPath="$PROJECT_DIR$/src/components/cards/AdCard.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/forms/AdForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/forms/AdForm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/forms/ImageUpload.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/forms/ImageUpload.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Home.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,7 +64,13 @@
       <workItem from="1714616471130" duration="3367000" />
       <workItem from="1714803203250" duration="5941000" />
       <workItem from="1714850402053" duration="2588000" />
-      <workItem from="1714898814954" duration="5918000" />
+      <workItem from="1714898814954" duration="6382000" />
+      <workItem from="1715048748302" duration="827000" />
+      <workItem from="1715135809111" duration="2018000" />
+      <workItem from="1715172586126" duration="439000" />
+      <workItem from="1715309106246" duration="2226000" />
+      <workItem from="1715324944885" duration="1063000" />
+      <workItem from="1715333962980" duration="9061000" />
     </task>
     <task id="LOCAL-00001" summary="renamed">
       <option name="closed" value="true" />
