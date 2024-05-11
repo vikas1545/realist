@@ -171,7 +171,6 @@ export const refreshToken = async (req, res) => {
         return res.status(403).json({error: "Refresh token failed"})
     }
 }
-
 export const currentUser = async (req, res) => {
     try {
         const user = await User.findById(req.user._id);

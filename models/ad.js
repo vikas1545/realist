@@ -5,7 +5,8 @@ const schema = new Schema(
         photos: [{}],
         price: {type: Number, maxLength: 255},
         address: {type: String, maxLength: 255, required: true},
-        bedroom: Number,
+        bedrooms: Number,
+        bathrooms: Number,
         landsize: String,
         carpark: Number,
         location: {

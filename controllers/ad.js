@@ -3,6 +3,7 @@ import {AWSS3} from "../config.js";
 import Ad from "../models/ad.js";
 import User from "../models/user.js";
 import slugify from 'slugify';
+
 export const uploadImage = async (req, res) => {
     try {
         const {image} = req.body;
@@ -53,6 +54,7 @@ export const removeImage = async (req, res) => {
 export const create = async (req, res) => {
     try {
         const {photos, description, title, address, price, type, landsize, coordinates} = req.body;
+        console.log("req.body ****************** :",req.body)
         const payLoadData = req.body;
         if (!photos?.length) {
             return res.json({error: "Photos are required"})
@@ -73,9 +75,10 @@ export const create = async (req, res) => {
         delete payLoadData['coordinates']
 
         // Generate slug if not provided
-        if (!payLoadData.slug) {
-            payLoadData.slug = slugify(title, { lower: true });
-        }
+        // if (!payLoadData.slug) {
+        //     payLoadData.slug = slugify(title, { lower: true });
+        // }
+
 
         const ad = await new Ad({
             //...req.body,
@@ -84,7 +87,8 @@ export const create = async (req, res) => {
             location: {
                 type: "Point",
                 coordinates: [Number(coordinates?.lon), Number(coordinates?.lat)]
-            }
+            },
+            slug: slugify(`${type}-${address}-${price}-${nanoid(6)}`)
         }).save();
 
 
@@ -92,17 +96,33 @@ export const create = async (req, res) => {
         const user = await User.findByIdAndUpdate(req.user._id,
             {
                 // $addToSet: {role: "Admin"}
-                $set: { role: ["Seller"] }
+                $set: {role: ["Seller"]}
             }, {
                 new: true
             }
         )
-        user.password=undefined;
-        user.resetCode =undefined
-        res.json({ad,user})
+        user.password = undefined;
+        user.resetCode = undefined
+        res.json({ad, user})
 
     } catch (err) {
         console.log("error :", err)
         res.send({error: "Something went wrong!"})
+    }
+}
+
+export const ads = async (req, res) => {
+    try {
+        const adsForSell = await Ad.find({action: "Sell"})
+            .select("-googleMap -location -photo.Key -photo.key -photo.ETag")
+            .sort({createdAt: -1}).limit(12);
+
+        const adsForRent = await Ad.find({action: "Rent"})
+            .select("-googleMap -location -photo.Key -photo.key -photo.ETag")
+            .sort({createdAt: -1}).limit(12);
+
+        res.json({adsForSell, adsForRent})
+    } catch (e) {
+        console.log("error :",e)
     }
 }
