@@ -4,15 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="603469f6-d946-45f3-ac70-e0053cd9f898" name="Changes" comment="uploaded image is getting deleted">
-      <change afterPath="$PROJECT_DIR$/src/components/cards/AdCard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/forms/AdForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/forms/AdForm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/Home.js" afterDir="false" />
-    </list>
+    <list default="true" id="603469f6-d946-45f3-ac70-e0053cd9f898" name="Changes" comment="fetched created ads and shown in cards" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -70,7 +62,7 @@
       <workItem from="1715172586126" duration="439000" />
       <workItem from="1715309106246" duration="2226000" />
       <workItem from="1715324944885" duration="1063000" />
-      <workItem from="1715333962980" duration="9061000" />
+      <workItem from="1715333962980" duration="9756000" />
     </task>
     <task id="LOCAL-00001" summary="renamed">
       <option name="closed" value="true" />
@@ -104,7 +96,15 @@
       <option name="project" value="LOCAL" />
       <updated>1714809624522</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="fetched created ads and shown in cards">
+      <option name="closed" value="true" />
+      <created>1715344825992</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1715344825992</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -114,6 +114,7 @@
     <MESSAGE value="renamed" />
     <MESSAGE value="uploaded images displaying" />
     <MESSAGE value="uploaded image is getting deleted" />
-    <option name="LAST_COMMIT_MESSAGE" value="uploaded image is getting deleted" />
+    <MESSAGE value="fetched created ads and shown in cards" />
+    <option name="LAST_COMMIT_MESSAGE" value="fetched created ads and shown in cards" />
   </component>
 </project>
