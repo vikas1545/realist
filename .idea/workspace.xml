@@ -4,7 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="603469f6-d946-45f3-ac70-e0053cd9f898" name="Changes" comment="fetched created ads and shown in cards" />
+    <list default="true" id="603469f6-d946-45f3-ac70-e0053cd9f898" name="Changes" comment="fetched created ads and shown in cards">
+      <change afterPath="$PROJECT_DIR$/src/pages/AdView.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/cards/AdCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/cards/AdCard.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -63,6 +70,10 @@
       <workItem from="1715309106246" duration="2226000" />
       <workItem from="1715324944885" duration="1063000" />
       <workItem from="1715333962980" duration="9756000" />
+      <workItem from="1715454469419" duration="1678000" />
+      <workItem from="1715492515594" duration="112000" />
+      <workItem from="1715492744430" duration="4110000" />
+      <workItem from="1715524021462" duration="9959000" />
     </task>
     <task id="LOCAL-00001" summary="renamed">
       <option name="closed" value="true" />
