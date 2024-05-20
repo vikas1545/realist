@@ -8,6 +8,9 @@ import {TbBath} from "react-icons/tb";
 import {BiArea} from "react-icons/bi";
 import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
+import LikeUnlike from "../components/misc/LikeUnlike";
+import Map from "../components/misc/Map";
+
 dayjs.extend(relativeTime);// fromNow()
 const AdView = () => {
     const params = useParams();
@@ -15,6 +18,8 @@ const AdView = () => {
     const [related, setRelated] = useState([])
     const [loading, setLoading] = useState(false);
 
+    const latitude = 24.4351882;
+    const longitude = 85.5279448;
     useEffect(() => {
         if (params?.slug) {
             fetchAd()
@@ -36,17 +41,17 @@ const AdView = () => {
 
     return (
         <>
-            {/*<div className='container' style={{display: "flex", flexDirection: "column", alignItems: "start"}}>*/}
 
-            {/*    <button className='btn btn-primary disabled mt-2'>{ad?.type} for {ad?.action}</button>*/}
-            {/*    <h2>{ad?.address}</h2>*/}
-            {/*</div>*/}
-
-            <Flex>
+            <Flex>{console.log('ad :', ad)}
                 <div className='container' style={{display: "flex", flexDirection: "column"}}>
+                    <Flex justify='space-between' style={{marginBottom: 5}}>
+                        <button className='btn btn-primary disabled mt-2'>{ad?.type} for {ad?.action}</button>
+                        {/*<button className='btn btn-primary disabled mt-2'>{ad?.type}</button>*/}
+                        <LikeUnlike ad={ad}/>
+                    </Flex>
 
-                    <button className='btn btn-primary disabled mt-2'>{ad?.type} for {ad?.action}</button>
                     <h3>{ad?.address}</h3>
+
                     <Typography variant="body2" color="text.secondary">
                         <Box sx={{display: 'flex', justifyContent: 'space-between'}}>
                             {ad?.bedrooms ? (
@@ -67,7 +72,7 @@ const AdView = () => {
                     </Typography>
 
                     <Typography gutterBottom variant="p" component="div" color="text.secondary">
-                         {dayjs(ad?.createdAt).fromNow()}
+                        {dayjs(ad?.createdAt).fromNow()}
                     </Typography>
                 </div>
 
@@ -86,6 +91,24 @@ const AdView = () => {
                     />
                 </div>
             </Flex>
+
+
+            <div className='container mb-5'>
+                <div className='row'>
+                    <div className='col-lg-8 offset-lg-2 mt-3'>
+
+                        <Map latitude={Number(ad?.location?.coordinates?.[1])}
+                             longitude={Number(ad?.location?.coordinates?.[0])}/>
+                        <br/>
+                        <h5>{ad?.type} in {ad?.address} for {ad?.action} ${ad?.price}</h5>
+                        <hr/>
+                        <h3 className='fw-bold'>{ad?.title}</h3>
+                        <p className='lead'>{ad?.description}</p>
+                    </div>
+                </div>
+
+            </div>
+
         </>
 
 

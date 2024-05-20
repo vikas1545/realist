@@ -4,13 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="603469f6-d946-45f3-ac70-e0053cd9f898" name="Changes" comment="fetched created ads and shown in cards">
-      <change afterPath="$PROJECT_DIR$/src/pages/AdView.js" afterDir="false" />
+    <list default="true" id="603469f6-d946-45f3-ac70-e0053cd9f898" name="Changes" comment="image details View">
+      <change afterPath="$PROJECT_DIR$/src/components/misc/LikeUnlike.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/misc/Map.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/cards/AdCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/cards/AdCard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/AdView.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/AdView.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,7 +73,14 @@
       <workItem from="1715454469419" duration="1678000" />
       <workItem from="1715492515594" duration="112000" />
       <workItem from="1715492744430" duration="4110000" />
-      <workItem from="1715524021462" duration="9959000" />
+      <workItem from="1715524021462" duration="10257000" />
+      <workItem from="1715588587043" duration="5862000" />
+      <workItem from="1715653571572" duration="2730000" />
+      <workItem from="1715703637153" duration="661000" />
+      <workItem from="1715827336538" duration="1813000" />
+      <workItem from="1715940892454" duration="219000" />
+      <workItem from="1716108040551" duration="2349000" />
+      <workItem from="1716169647400" duration="2529000" />
     </task>
     <task id="LOCAL-00001" summary="renamed">
       <option name="closed" value="true" />
@@ -115,7 +122,15 @@
       <option name="project" value="LOCAL" />
       <updated>1715344825992</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="image details View">
+      <option name="closed" value="true" />
+      <created>1715537923650</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1715537923650</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -126,6 +141,7 @@
     <MESSAGE value="uploaded images displaying" />
     <MESSAGE value="uploaded image is getting deleted" />
     <MESSAGE value="fetched created ads and shown in cards" />
-    <option name="LAST_COMMIT_MESSAGE" value="fetched created ads and shown in cards" />
+    <MESSAGE value="image details View" />
+    <option name="LAST_COMMIT_MESSAGE" value="image details View" />
   </component>
 </project>
