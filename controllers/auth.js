@@ -216,8 +216,8 @@ export const updatePassword = async (req, res) => {
 
 export const updateProfile = async (req,res) =>{
     try {
-        const user=await User.findByIdAndUpdate(req.user._id,req.body,{
-            new:true // here new: true is for mongodb then return updated data instead of default older
+        const user=await User.findByIdAndUpdate(req.user._id,req.body.profile,{
+            new:true
         })
         user.password=undefined;
         user.resetCode=undefined;

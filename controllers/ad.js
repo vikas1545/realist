@@ -54,7 +54,7 @@ export const removeImage = async (req, res) => {
 export const create = async (req, res) => {
     try {
         const {photos, description, title, address, price, type, landsize, coordinates} = req.body;
-        console.log("req.body ****************** :",req.body)
+        console.log("req.body ****************** :", req.body)
         const payLoadData = req.body;
         if (!photos?.length) {
             return res.json({error: "Photos are required"})
@@ -123,6 +123,56 @@ export const ads = async (req, res) => {
 
         res.json({adsForSell, adsForRent})
     } catch (e) {
-        console.log("error :",e)
+        console.log("error :", e)
+    }
+}
+
+export const read = async (req, res) => {
+    try {
+        const ad = await Ad.findOne({slug: req.params.slug})
+            .populate("postedBy", "name usename email company photo.Location")
+            .select("-photos.ETag -photos.Key -photos.key -photos.ETag -photos.Bucket");
+
+        const related = await Ad.find({
+            _id: {$ne: ad._id},
+            action: ad.action,
+            type: ad.type,
+            address: ad.address
+        }).limit(3).select("-photos.ETag -photos.Key -photos.key -photos.ETag -photos.Bucket")
+
+        res.json({ad, related})
+
+    } catch (err) {
+        console.log('err :', err)
+        res.json({error: "Something went wrong"})
+    }
+}
+
+export const addToWishList = async (req, res) => {
+
+    try {
+
+        const user = await User.findByIdAndUpdate(req.user._id, {
+            $addToSet: {wishlist: req.body.adId}
+        }, {new: true})
+
+        const {password, resetCode, ...rest} = user._doc; // Here, `doc` represents the retrieved user document
+        res.json(rest)
+    } catch (e) {
+        res.json({error:"something went wrong"})
+        console.log("error :", e)
+    }
+}
+
+export const removeFromWishList = async (req, res) => {
+    try {
+        const user = await User.findByIdAndUpdate(req.user._id, {
+            $pull: {wishlist: req.params.adId}
+        }, {new: true})
+
+        const {password, resetCode, ...rest} = user._doc; // Here, `doc` represents the retrieved user document
+        res.json(rest)
+    } catch (e) {
+        console.log("error :", e)
     }
 }
