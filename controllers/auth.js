@@ -198,6 +198,7 @@ export const publicProfile = async (req, res) => {
 export const updatePassword = async (req, res) => {
     try {
         const {password} = req.body;
+        console.log('req.body....... :',req.body)
         if (!password) {
             return res.json({error: "Password is required!"})
         }
@@ -231,3 +232,4 @@ export const updateProfile = async (req,res) =>{
         }
     }
 }
+
