@@ -6,10 +6,13 @@ const Sidebar = () => {
         <div>
             <ul className="nav nav-tabs" id="myTab" role="tablist">
                 <li className="nav-item">
-                    <NavLink className="nav-link"  to='/dashboard'>Dashboard</NavLink>
+                    <NavLink className="nav-link" to='/dashboard'>Dashboard</NavLink>
                 </li>
                 <li className="nav-item">
-                    <NavLink className="nav-link"  to='/ad/create'>Create Ad</NavLink>
+                    <NavLink className="nav-link" to='/ad/create'>Create Ad</NavLink>
+                </li>
+                <li className="nav-item">
+                    <NavLink className="nav-link" to='/user/profile'>Profile</NavLink>
                 </li>
             </ul>
         </div>

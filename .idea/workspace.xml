@@ -4,12 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="603469f6-d946-45f3-ac70-e0053cd9f898" name="Changes" comment="image details View">
-      <change afterPath="$PROJECT_DIR$/src/components/misc/LikeUnlike.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/misc/Map.js" afterDir="false" />
+    <list default="true" id="603469f6-d946-45f3-ac70-e0053cd9f898" name="Changes" comment="till mapbox added">
+      <change afterPath="$PROJECT_DIR$/src/components/forms/ProfileUpload.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/nav/Footer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/user/Profile.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/nav/Sidebar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/nav/Sidebar.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/AdView.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/AdView.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -80,7 +83,11 @@
       <workItem from="1715827336538" duration="1813000" />
       <workItem from="1715940892454" duration="219000" />
       <workItem from="1716108040551" duration="2349000" />
-      <workItem from="1716169647400" duration="2529000" />
+      <workItem from="1716169647400" duration="4646000" />
+      <workItem from="1716268653804" duration="741000" />
+      <workItem from="1716343138790" duration="4238000" />
+      <workItem from="1716432146087" duration="2283000" />
+      <workItem from="1716704889155" duration="6874000" />
     </task>
     <task id="LOCAL-00001" summary="renamed">
       <option name="closed" value="true" />
@@ -130,7 +137,15 @@
       <option name="project" value="LOCAL" />
       <updated>1715537923650</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="till mapbox added">
+      <option name="closed" value="true" />
+      <created>1716172684960</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1716172684960</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -142,6 +157,7 @@
     <MESSAGE value="uploaded image is getting deleted" />
     <MESSAGE value="fetched created ads and shown in cards" />
     <MESSAGE value="image details View" />
-    <option name="LAST_COMMIT_MESSAGE" value="image details View" />
+    <MESSAGE value="till mapbox added" />
+    <option name="LAST_COMMIT_MESSAGE" value="till mapbox added" />
   </component>
 </project>

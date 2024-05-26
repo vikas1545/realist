@@ -18,8 +18,6 @@ const AdView = () => {
     const [related, setRelated] = useState([])
     const [loading, setLoading] = useState(false);
 
-    const latitude = 24.4351882;
-    const longitude = 85.5279448;
     useEffect(() => {
         if (params?.slug) {
             fetchAd()
@@ -109,6 +107,21 @@ const AdView = () => {
 
             </div>
 
+            <div className='container-fluid'>
+                    <h3 className='d-flex justify-content-center'>Related Ads</h3>
+                <List
+                    loading={loading}
+                    dataSource={related[0]?.photos}
+                    grid={{xs: 1, sm: 1, md: 2, lg: 2, xl: 3, xxl: 3}}
+                    renderItem={(item, index) => (
+                        <List.Item key={index}>
+                            <Card style={{height: '100%', margin: '5px'}}>
+                                <Image src={item.Location} style={{height: '100%', objectFit: 'cover'}}/>
+                            </Card>
+                        </List.Item>
+                    )}
+                />
+            </div>
         </>
 
 
