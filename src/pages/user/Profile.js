@@ -41,27 +41,27 @@ const Profile = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            //console.log('profile :', profile)
             setLoading(true)
-            const {data} = await axios.put("/update-profile",{profile});
-            if(data?.error) {
+            const {data} = await axios.put("/update-profile", {profile});
+            if (data?.error) {
                 toast.error(data.error)
-            }else {
-                setAuth({...auth,user:data});
-                let fromLS=JSON.parse(localStorage.getItem("auth"));
+            } else {
+                setAuth({...auth, user: data});
+                let fromLS = JSON.parse(localStorage.getItem("auth"));
                 fromLS.user = data;
-                localStorage.setItem("auth",JSON.stringify(fromLS))
+                localStorage.setItem("auth", JSON.stringify(fromLS))
                 setLoading(false)
                 toast.success("Profile Updated")
             }
         } catch (e) {
             console.log('error :', e)
             toast.error("something went wrong")
+            setLoading(false)
         }
     }
     return (
         <>
-            <h1 className='display-1 bg-primary text-light p-5'>Profile update form</h1>
+            <h1 className='display-1 bg-primary text-light p-5'>Profile</h1>
             <div className='container-fluid'>
                 <Sidebar/>
                 <div className='container mt-2'>
