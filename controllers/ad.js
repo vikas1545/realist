@@ -3,6 +3,9 @@ import {AWSS3} from "../config.js";
 import Ad from "../models/ad.js";
 import User from "../models/user.js";
 import slugify from 'slugify';
+import * as config from "../config.js";
+import {emailTemplate} from "../helpers/email.js";
+import {requireSignIn} from "../middlewares/auth.js";
 
 export const uploadImage = async (req, res) => {
     try {
@@ -159,7 +162,7 @@ export const addToWishList = async (req, res) => {
         const {password, resetCode, ...rest} = user._doc; // Here, `doc` represents the retrieved user document
         res.json(rest)
     } catch (e) {
-        res.json({error:"something went wrong"})
+        res.json({error: "something went wrong"})
         console.log("error :", e)
     }
 }
@@ -174,5 +177,64 @@ export const removeFromWishList = async (req, res) => {
         res.json(rest)
     } catch (e) {
         console.log("error :", e)
+    }
+}
+
+export const contactSeller = async (req, res) => {
+    try {
+        console.log('------ ', req.body);
+        const {email, name, message, phone, adId} = req.body;
+        const ad = await Ad.findById(adId).populate("postedBy", "email");
+
+        const user = await User.findByIdAndUpdate(req.user._id, {
+            $addToSet: {enquiredProperties: adId}
+        });
+
+        if (!user) {
+            return res.json({error: "Could not find user with this email"})
+        } else {
+            //send email
+
+
+            await config.AWSSES.sendEmail(emailTemplate(ad.postedBy.email,
+                    `<p>You have received a new customer enquiry</p>
+                              <h4>Customer details</h4>
+                              <p>Name :${name}</p>
+                              <p>Email :${email}</p>
+                              <p>Phone :${phone}</p>
+                              <p>Message :${message}</p>
+                            <a href="${config.CLIENT_URL}/ad/${ad.slug}">${ad.type} in ${ad.address} for ${ad.action} ${ad.price}</a>`,
+                    email, "New enquiry received"),
+                (err, data) => {
+                    if (err) {
+                        res.json({ok: false})
+                    } else {
+                        console.log(data)
+                        res.json({ok: true})
+                    }
+                })
+
+
+        }
+    } catch (e) {
+        res.json({error: "Something went wrong"})
+    }
+}
+
+export const userAds = async (req, res) => {
+    try {
+        const perPage = 2;
+        const page = req.body.params ? req.body.params : 1;
+        const total = await Ad.find({postedBy: req.user._id})
+            .select("-photos.key photos.Key photos.ETag photos.Bucket -location")
+            .populate("postedBy", "name email username phone company")
+            .skip((page - 1) * perPage)
+            .limit(perPage)
+            .sort({createAt: -1});
+
+        res.json({ads, total:total.length})
+    } catch (e) {
+        console.log('error :',e)
+        res.json({error:"Something went wrong"})
     }
 }

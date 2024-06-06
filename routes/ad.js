@@ -10,5 +10,6 @@ router.get('/ads',ad.ads);
 router.get('/ad/:slug',ad.read);
 router.post('/wishlist',requireSignIn,ad.addToWishList);
 router.delete('/wishlist/:adId',requireSignIn,ad.removeFromWishList);
-
+router.post('/contact-seller',requireSignIn,ad.contactSeller);
+router.get('/user-ads/:perPage',requireSignIn,ad.userAds);
 export default router;

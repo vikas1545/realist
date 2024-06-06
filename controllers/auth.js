@@ -48,26 +48,6 @@ export const preRegister = async (req, res) => {
         const token = jwt.sign({email, password}, config.JWT_SECRET, {
             expiresIn: "1h",
         })
-        // const emailParams = {
-        //     Source: config.EMAIL_FROM, Destination: {
-        //         ToAddresses: [config.EMAIL_TO],
-        //     }, Message: {
-        //         Body: {
-        //             Html: {
-        //                 Charset: "UTF-8",
-        //                 Data: `<html>
-        //                          <body>
-        //                           <h5>Welcome to Realist App</h5>
-        //                           <p>Please click the link bellow to activate your account.</p>
-        //                           <a href="${config.CLIENT_URL}/auth/account-activate/${token}">Activate my account</a>
-        //                         </body>
-        //                        </html>`,
-        //             },
-        //         }, Subject: {
-        //             Charset: "UTF-8", Data: "Welcome to Realist",
-        //         },
-        //     },
-        // };
 
         const data = await config.AWSSES.sendEmail(emailTemplate(email,
             `<p>Please click the link bellow to activate your account.</p>
@@ -198,7 +178,6 @@ export const publicProfile = async (req, res) => {
 export const updatePassword = async (req, res) => {
     try {
         const {password} = req.body;
-        console.log('req.body....... :',req.body)
         if (!password) {
             return res.json({error: "Password is required!"})
         }
@@ -210,25 +189,25 @@ export const updatePassword = async (req, res) => {
         });
         res.json({ok: true})
     } catch (err) {
-        console.log('err :',err);
-        res.status(403).json({error:"Unauthorized"})
+        console.log('err :', err);
+        res.status(403).json({error: "Unauthorized"})
     }
 }
 
-export const updateProfile = async (req,res) =>{
+export const updateProfile = async (req, res) => {
     try {
-        const user=await User.findByIdAndUpdate(req.user._id,req.body.profile,{
-            new:true
+        const user = await User.findByIdAndUpdate(req.user._id, req.body.profile, {
+            new: true
         })
-        user.password=undefined;
-        user.resetCode=undefined;
+        user.password = undefined;
+        user.resetCode = undefined;
         res.json(user)
-    }catch (err) {
-        console.log('err :',err);
-        if(err.codeName==='DuplicateKey') {
-            return res.json({error:"Username or email is already taken"})
-        }else {
-            res.status(403).json({error:"Unauthorized"})
+    } catch (err) {
+        console.log('err :', err);
+        if (err.codeName === 'DuplicateKey') {
+            return res.json({error: "Username or email is already taken"})
+        } else {
+            res.status(403).json({error: "Unauthorized"})
         }
     }
 }
