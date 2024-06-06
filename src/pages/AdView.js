@@ -10,6 +10,7 @@ import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
 import LikeUnlike from "../components/misc/LikeUnlike";
 import Map from "../components/misc/Map";
+import ContactSeller from "../components/forms/ContactSeller";
 
 dayjs.extend(relativeTime);// fromNow()
 const AdView = () => {
@@ -107,8 +108,13 @@ const AdView = () => {
 
             </div>
 
+            <div className='container'>
+                <ContactSeller ad={ad}/>
+            </div>
+
             <div className='container-fluid'>
                     <h3 className='d-flex justify-content-center'>Related Ads</h3>
+                    <hr style={{width:"33%"}}/>
                 <List
                     loading={loading}
                     dataSource={related[0]?.photos}

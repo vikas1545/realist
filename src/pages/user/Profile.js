@@ -66,7 +66,6 @@ const Profile = () => {
                 <Sidebar/>
                 <div className='container mt-2'>
                     {/*<pre>{JSON.stringify({...profile})}</pre>*/}
-                    {/*<pre>{JSON.stringify(auth)}</pre>*/}
                     <div className='row'>
                         <div className='col-lg-8 offset-lg-2 mt-2'>
                             <ProfileUpload profile={profile} uploading={uploading} setUploading={setUploading}

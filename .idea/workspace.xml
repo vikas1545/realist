@@ -5,10 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="603469f6-d946-45f3-ac70-e0053cd9f898" name="Changes" comment="till mapbox added">
-      <change afterPath="$PROJECT_DIR$/src/pages/user/Settings.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/forms/ContactSeller.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/nav/Sidebar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/nav/Sidebar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/AdView.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/AdView.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/user/Profile.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/user/Profile.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -84,7 +83,9 @@
       <workItem from="1716343138790" duration="4238000" />
       <workItem from="1716432146087" duration="2283000" />
       <workItem from="1716704889155" duration="7239000" />
-      <workItem from="1716728850035" duration="4106000" />
+      <workItem from="1716728850035" duration="6475000" />
+      <workItem from="1716777514078" duration="2596000" />
+      <workItem from="1716864600993" duration="1416000" />
     </task>
     <task id="LOCAL-00001" summary="renamed">
       <option name="closed" value="true" />
